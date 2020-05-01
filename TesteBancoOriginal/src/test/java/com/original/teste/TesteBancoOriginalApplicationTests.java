@@ -8,6 +8,7 @@ class TesteBancoOriginalApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("Test ok");
 	}
 
 }
