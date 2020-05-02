@@ -1,0 +1,22 @@
+<div class="col-md-6">
+  <table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Código</th>
+    <th>Descrição</th>
+    <th>Preço</th>
+    <th>Data de Criação</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let produto of produtos">
+          <td>{{produto.codigoProduto}}</td>
+          <td>{{produto.descProduto}}</td>
+          <td>{{produto.valor}}</td>
+          <td>{{produto.ativo}}</td>
+          <td><button class="btn btn-danger" (click)="inativarProduto(produto)"> Delete Employee</button></td>
+          </tr>
+  </tbody>
+    </table>
+
+  </div>

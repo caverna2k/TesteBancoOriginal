@@ -1,0 +1,14 @@
+<div class="container">
+
+  <div *ngIf="erroLogin">
+    <h4>Invalid username and password Please try again</h4>
+  </div>
+
+  <div>
+    Login : <input type="text" name="username" [(ngModel)]="login">
+    Senha : <input type="password" name="password" [(ngModel)]="senha">
+  </div>
+  <button (click)=checkLogin() class="btn btn-success">
+    Login
+  </button>
+</div>
