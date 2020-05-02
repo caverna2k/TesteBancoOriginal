@@ -1,8 +1,8 @@
 package com.original.teste.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.original.teste.model.JwtRequest;
 import com.original.teste.model.JwtResponse;
+import com.original.teste.security.CustomAuthManager;
 import com.original.teste.security.JwtTokenUtil;
 import com.original.teste.service.JwtUserDataService;
 
@@ -30,7 +31,7 @@ public class JwtAuthenticationController {
 	private JwtUserDataService userDetailsService;
 
 	@Autowired
-	private AuthenticationManager authenticationManager;
+	private CustomAuthManager authenticationManager;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest)  {
@@ -40,6 +41,7 @@ public class JwtAuthenticationController {
 	
 		} catch (Exception e) {
 			e.printStackTrace();
+			return new ResponseEntity<String>("Unauthorized", HttpStatus.UNAUTHORIZED);
 		}
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 		final String token = jwtTokenUtil.generateToken(userDetails);
