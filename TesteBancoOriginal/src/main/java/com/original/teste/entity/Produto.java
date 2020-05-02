@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,14 +19,12 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@Table(name = "produto")
+@NoArgsConstructor
+@RequiredArgsConstructor
+@EqualsAndHashCode
 public class Produto {
-
-	
-	@Entity(name = "produto")
-	@NoArgsConstructor
-	@RequiredArgsConstructor
-	@EqualsAndHashCode(exclude={"codigoProduto", "descricao", "valor", "ativo", "dataCriacao"})
-	public class SystemUser {
 
 		@Id @Column(name = "codigo_produto") @GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Getter @Setter private Long codigoProduto;
@@ -43,6 +42,3 @@ public class Produto {
 		@Getter @Setter private Date dataCriacao;
 		
 	}
-
-	
-}

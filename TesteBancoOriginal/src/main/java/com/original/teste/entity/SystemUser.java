@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -13,10 +14,11 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "system_user")
+@Entity
+@Table(name = "system_user")
 @NoArgsConstructor
 @RequiredArgsConstructor
-@EqualsAndHashCode(exclude={"id", "login", "senha"})
+@EqualsAndHashCode
 public class SystemUser {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
