@@ -18,12 +18,14 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "produto")
 @NoArgsConstructor
 @RequiredArgsConstructor
 @EqualsAndHashCode
+@ToString
 public class Produto {
 
 		@Id @Column(name = "codigo_produto") @GeneratedValue(strategy = GenerationType.IDENTITY)

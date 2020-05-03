@@ -1,6 +1,5 @@
 package com.original.teste.service;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
@@ -8,16 +7,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class BaseServiceConfig {
 
-	@Value("${page.size}")
-	private int pageSize;
-	
-	
 
-	protected PageRequest createPageRequest(int pageNumber, Sort.Direction direction, String... properties) {
-	    return PageRequest.of(pageNumber,getPageSize(),direction,properties);
+	/** Creates a @PageRequest
+	 * @param pageLen - page items length
+	 * @param pageNumber - number of the page, starts with zero.
+	 * @param direction - defined in application-xyz.properties
+	 * @param properties - defined in application-xyz.properties
+	 * @return
+	 */
+	protected PageRequest createPageRequest(int pageLen, int pageNumber, Sort.Direction direction, String... properties) {
+	    return PageRequest.of(pageNumber,pageLen,direction,properties);
 	}
 
-	public int getPageSize() {
-		return pageSize;
-	}
 }

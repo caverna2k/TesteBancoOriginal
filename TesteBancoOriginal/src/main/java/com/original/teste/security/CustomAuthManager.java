@@ -31,7 +31,7 @@ public class CustomAuthManager implements AuthenticationManager {
 	    }
 	    
 	    //List<Right> userRights = rightRepo.getUserRights(username);
-	    return new UsernamePasswordAuthenticationToken(username, null, null/*userRights.stream().map(x -> new SimpleGrantedAuthority(x.getName())).collect(Collectors.toList())*/);
+	    return new UsernamePasswordAuthenticationToken(username, null, null/*user rights*/);
 	}
 }
 
