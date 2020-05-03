@@ -4,19 +4,19 @@
   <tr>
     <th>Código</th>
     <th>Descrição</th>
-    <th>Preço</th>
     <th>Data de Criação</th>
-    </tr>
+    <th>Preço</th>
+    <th>Ativo</th>
   </thead>
   <tbody>
       <tr *ngFor="let produto of produtos">
           <td>{{produto.codigoProduto}}</td>
-          <td>{{produto.descProduto}}</td>
+          <td>{{produto.descricao}}</td>
+          <td>{{produto.dataCriacao}}</td>
           <td>{{produto.valor}}</td>
           <td>{{produto.ativo}}</td>
-          <td><button class="btn btn-danger" (click)="inativarProduto(produto)"> Delete Employee</button></td>
+          <td><button class="btn btn-danger" (click)="inativarProduto(produto)"> Inativar Produto</button></td>
           </tr>
   </tbody>
-    </table>
-
-  </div>
+ </table>
+</div>
