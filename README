@@ -36,5 +36,6 @@ Itens faltantes/em desenvolvimento
 -Testes dos controllers usando Mockito.
 -Melhorar a cobertura de código dos testes unitários.
 -Implementação de CRUD no front-end.
+-navegação de dados no front-end
 -organizar os branches.
 
