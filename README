@@ -1,0 +1,40 @@
+Projeto Teste para desenvolvedor Java
+
+-Este é um projeto que foi desenvolvido para um teste para programador java.
+
+Instalação
+
+-Primeiro é necessário clonar o repositório. Será criado o diretório TesteBancoOriginal
+-Dentro do diretório TesteBancoOriginal, teremos dois diretórios:
+--- GerenciamentoProdutos -> o projeto em Angular, front end
+--- TesteBancoOriginal -> o projeto backend em Java, Spring boot.
+
+O projeto backend, TesteBancoOriginal, é um projeto Maven que usa Spring Boot. 
+Ele funciona com BD em memória, H2, e quando inicado o banco é criado e usuários e produtos são inseridos,
+como por exemplo:
+
+insert into System_User (login, senha) values ('clochead0', 'fFBWnnb4LKe');
+insert into System_User (login, senha) values ('jboulsher1', 'Fvxck9CcQQh');
+
+insert into produto (descricao, valor, ativo, dataCriacao) values ('Canis lupus', '30558964.82', false, '4/21/2020');
+insert into produto (descricao, valor, ativo, dataCriacao) values ('Suricata suricatta', '33110345.35', true, '3/27/2020');
+
+Todos os dados inseridos estão no arquivo V1_0__Create-systemuser.sql. Os dados formam gerados pelos https://www.mockaroo.com/ .
+
+A API é exposta na url: localhost:8080.
+
+O projeto do front end, GerenciamentoProdutos, é feito em Angular 9. Essa foi a primeira vez que eu fiz algo com Angular.
+Para rodar o projeto front end, acesse a pasta "gerenciamento-produto" e abra um terminal. 
+Instale as dependencias usando o comando "npm install". Após, para rodar, digite "ng serve". 
+
+Para acessar o front end, em um navegador acesse: "localhost:4200". 
+Para logins e senhas, utilize os dados do arquivo SQL citado acima.
+
+Itens faltantes/em desenvolvimento
+-Documentação das APIs com Swagger.
+-Implementação decente de boas práticas e padrões.
+-Testes dos controllers usando Mockito.
+-Melhorar a cobertura de código dos testes unitários.
+-Implementação de CRUD no front-end.
+-organizar os branches.
+
